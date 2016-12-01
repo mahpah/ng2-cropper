@@ -1,0 +1,26 @@
+.modal-content
+	.modal-header
+		button.close(type="button", (click)="dialog.dismiss()")
+		h4.modal-title {{ context.modalTitle }}
+	.modal-body(#body, style="min-height:250px;padding:0;")
+		image-cropper(
+			#cropper,
+			style="width: 100%;",
+			[imageUrl]="context.imageUrl",
+			(export)="saveData($event)",
+			[settings]="context.settings",
+			[cropbox]="context.cropbox"
+		)
+	.modal-footer
+		button.btn.btn-default(
+			type="button",
+			(click)="dialog.dismiss()"
+		)
+			| {{ context.buttonCloseCaption }}
+		button.btn.btn-primary(
+			(click)="cropper.exportCanvas()",
+			type="button",
+			[disabled]="cropper.isLoading"
+		)
+			i.fa.fa-save
+			span  {{ context.buttonSaveCaption }}

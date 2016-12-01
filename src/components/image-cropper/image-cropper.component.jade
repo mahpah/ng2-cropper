@@ -1,0 +1,11 @@
+.wrapper
+	.loading-block.loader(*ngIf="isLoading")
+		.spinner
+	.alert.alert-warning(*ngIf="loadError") {{ loadImageErrorText }}
+	.cropper
+		img(#image,
+			alt="image",
+			[src]="imageUrl",
+			(load)="imageLoaded($event)",
+			crossorigin="anonymous",
+			(error)="imageLoadError($event)")

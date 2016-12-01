@@ -1,0 +1,69 @@
+{
+  "name": "ng2-cropper",
+  "version": "0.0.1",
+  "description": "Angular2 component wrapper for CropperJS",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "webpack-dev-server --config ./webpack-dev.config.js",
+    "prebuild": "rimraf ./dist",
+    "build": "webpack --config ./webpack-build.config.js --env.prod",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "keywords": [
+    "image",
+    "cropper",
+    "cropperjs"
+  ],
+  "author": "DgmTeam <mahpahh@gmail.com>",
+  "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahpah/ng2-cropper"
+  },
+  "devDependencies": {
+    "@angular/platform-browser-dynamic": "^2.1.2",
+    "@types/cropperjs": "^0.0.22",
+    "@types/node": "^6.0.46",
+    "angular2-template-loader": "^0.6.0",
+    "awesome-typescript-loader": "^2.2.4",
+    "codelyzer": "^1.0.0-beta.3",
+    "css-loader": "^0.25.0",
+    "css-to-string-loader": "^0.1.2",
+    "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "node-sass": "3.10.0",
+    "pug": "^2.0.0-beta6",
+    "pug-html-loader": "1.0.7",
+    "resolve-url-loader": "^1.6.0",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.0.2",
+    "ts-helpers": "^1.1.2",
+    "ts-loader": "^1.0.0",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.6",
+    "webpack": "2.1.0-beta.25",
+    "webpack-dev-server": "2.1.0-beta.10",
+    "webpack-merge": "^0.15.0"
+  },
+  "dependencies": {
+    "@angular/common": "^2.1.2",
+    "@angular/compiler": "^2.1.2",
+    "@angular/core": "^2.1.2",
+    "@angular/forms": "^2.1.2",
+    "@angular/platform-browser": "^2.1.2",
+    "core-js": "^2.4.1",
+    "cropperjs": "^0.8.1",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "^0.6.26"
+  },
+  "peerDependencies": {
+    "angular2-modal": "^2.0.1"
+  }
+}

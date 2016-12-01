@@ -1,0 +1,39 @@
+:host {
+	display: block;
+}
+
+img {
+	max-height: 500px;
+}
+
+.cropper {
+	img {
+		max-width: 100%;
+	}
+}
+
+.wrapper {
+	position: relative;
+}
+
+.loading-block {
+	.spinner {
+		width: 31px;
+		height: 31px;
+		margin: 0 auto;
+		border: 2px solid rgba(97,100,193,0.98);
+		border-radius: 50%;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		animation: cssload-spin 425ms infinite linear;
+		position: absolute;
+		top: calc(50% - 15px);
+		left: calc(50% - 15px);
+		animation: cssload-spin 425ms infinite linear;
+	}
+
+
+	@keyframes cssload-spin {
+		100%{ transform: rotate(360deg); transform: rotate(360deg); }
+	}
+}

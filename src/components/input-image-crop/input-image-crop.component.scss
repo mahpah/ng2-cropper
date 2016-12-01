@@ -1,0 +1,66 @@
+:host {
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+.preview {
+	width: 100%;
+}
+
+label {
+	position: relative;
+	min-height: 100px;
+	width: 100%;
+	background-color: #ddd;
+	cursor: pointer;
+	display: inline-block;
+	&:hover {
+		.icon {
+			color: #fff;
+		}
+	}
+	.icon {
+		font-size: 4em;
+		color: rgba(255, 255, 255, 0.7);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.btn-group {
+	position: absolute;
+	right: .5em;
+	top: 1em;
+	z-index: 10;
+
+	.btn-remove {
+		position: relative;
+		line-height: 1;
+		padding: .5em;
+		border-radius: 50%;
+		background-color: hsla(0, 100%, 100%, .4);
+		color: #555;
+		cursor: pointer;
+		display: inline-block;
+		width: 2em;
+		text-align: center;
+
+		& + .btn-remove {
+			margin-left: .5em;
+		}
+
+		&:hover {
+			background-color: hsla(0, 100%, 100%, .9);
+		}
+	}
+}

@@ -1,6 +1,6 @@
 {
   "name": "ng2-cropper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angular2 component wrapper for CropperJS",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -62,8 +62,5 @@
     "cropperjs": "^0.8.1",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "^0.6.26"
-  },
-  "peerDependencies": {
-    "angular2-modal": "^2.0.1"
   }
 }

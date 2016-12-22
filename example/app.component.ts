@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 	selector: 'app',
 	providers: [  ],
 	templateUrl: './app.component.jade',
+	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
 	private form: FormGroup

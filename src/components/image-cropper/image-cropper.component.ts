@@ -6,6 +6,7 @@ import {
 	Output,
 	EventEmitter,
 	ViewEncapsulation,
+	ElementRef,
 } from '@angular/core'
 
 export interface IImageCropperSetting {
@@ -32,7 +33,8 @@ export class ImageCropper {
 	@Input() settings: IImageCropperSetting
 	@Input() cropbox: Cropper.CropBoxData
 	@Input() loadImageErrorText: string
-	@ViewChild('image') image
+	@Input() cropperOptions: Cropper.CropperOptions
+	@ViewChild('image') image: ElementRef
 	@Output() export = new EventEmitter<IImageCropperResult>()
 	@Output() ready = new EventEmitter()
 	private isLoading = true
@@ -92,11 +94,12 @@ export class ImageCropper {
 			aspectRatio = width / height
 		}
 
-		return {
+		return Object.assign({
 			aspectRatio,
 			movable: false,
 			scalable: false,
 			zoomable: false,
-		}
+			viewMode: 1,
+		}, this.cropperOptions)
 	}
 }

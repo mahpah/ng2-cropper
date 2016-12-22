@@ -190,7 +190,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, ":host {\n  display: block;\n}\n\nimg {\n  max-height: 500px;\n}\n\n.cropper img {\n  max-width: 100%;\n}\n\n.wrapper {\n  position: relative;\n}\n\n.loading-block .spinner {\n  width: 31px;\n  height: 31px;\n  margin: 0 auto;\n  border: 2px solid rgba(97, 100, 193, 0.98);\n  border-radius: 50%;\n  border-left-color: transparent;\n  border-right-color: transparent;\n  animation: cssload-spin 425ms infinite linear;\n  position: absolute;\n  top: calc(50% - 15px);\n  left: calc(50% - 15px);\n  animation: cssload-spin 425ms infinite linear;\n}\n\n@keyframes cssload-spin {\n  100% {\n    transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}", ""]);
+exports.push([module.i, ":host {\n  display: block;\n}\n\nimg {\n  max-height: 500px;\n}\n\n.cropper img {\n  max-width: 100%;\n  max-height: 100%;\n}\n\n.ngcrop-wrapper {\n  position: relative;\n  min-height: 80px;\n}\n\n.ngcrop-wrapper .loading-block {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.ngcrop-wrapper .loading-block .spinner {\n  width: 31px;\n  height: 31px;\n  margin: 0 auto;\n  border: 2px solid rgba(97, 100, 193, 0.98);\n  border-radius: 50%;\n  border-left-color: transparent;\n  border-right-color: transparent;\n  animation: cssload-spin 425ms infinite linear;\n  position: absolute;\n  top: calc(50% - 15px);\n  left: calc(50% - 15px);\n  animation: cssload-spin 425ms infinite linear;\n}\n\n@keyframes cssload-spin {\n  100% {\n    transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}", ""]);
 
 // exports
 
@@ -233,7 +233,7 @@ if (typeof styles === 'string') {
 /* 7 */
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"wrapper\"><div class=\"loading-block loader\" *ngIf=\"isLoading\"><div class=\"spinner\"></div></div><div class=\"alert alert-warning\" *ngIf=\"loadError\">{{ loadImageErrorText }}</div><div class=\"cropper\"><img #image alt=\"image\" [src]=\"imageUrl\" (load)=\"imageLoaded($event)\" crossorigin=\"anonymous\" (error)=\"imageLoadError($event)\"></div></div>";
+module.exports = "<div class=\"ngcrop-wrapper\"><div class=\"loading-block\" *ngIf=\"isLoading\"><div class=\"spinner\"></div></div><div class=\"alert alert-warning\" *ngIf=\"loadError\">{{ loadImageErrorText }}</div><div class=\"cropper\"><img #image alt=\"image\" [src]=\"imageUrl\" (load)=\"imageLoaded($event)\" crossorigin=\"anonymous\" (error)=\"imageLoadError($event)\"></div></div>";
 
 /***/ },
 /* 8 */
@@ -296,12 +296,13 @@ var ImageCropper = (function () {
                 var _a = this.settings, width = _a.width, height = _a.height;
                 aspectRatio = width / height;
             }
-            return {
+            return Object.assign({
                 aspectRatio: aspectRatio,
                 movable: false,
                 scalable: false,
                 zoomable: false,
-            };
+                viewMode: 1,
+            }, this.cropperOptions);
         },
         enumerable: true,
         configurable: true
@@ -323,8 +324,12 @@ var ImageCropper = (function () {
         __metadata('design:type', String)
     ], ImageCropper.prototype, "loadImageErrorText", void 0);
     __decorate([
-        core_1.ViewChild('image'), 
+        core_1.Input(), 
         __metadata('design:type', Object)
+    ], ImageCropper.prototype, "cropperOptions", void 0);
+    __decorate([
+        core_1.ViewChild('image'), 
+        __metadata('design:type', core_1.ElementRef)
     ], ImageCropper.prototype, "image", void 0);
     __decorate([
         core_1.Output(), 

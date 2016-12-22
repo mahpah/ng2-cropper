@@ -1,5 +1,5 @@
 import Cropper from 'cropperjs';
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, ElementRef } from '@angular/core';
 export interface IImageCropperSetting {
     width: number;
     height: number;
@@ -15,7 +15,8 @@ export declare class ImageCropper {
     settings: IImageCropperSetting;
     cropbox: Cropper.CropBoxData;
     loadImageErrorText: string;
-    image: any;
+    cropperOptions: Cropper.CropperOptions;
+    image: ElementRef;
     export: EventEmitter<IImageCropperResult>;
     ready: EventEmitter<{}>;
     private isLoading;

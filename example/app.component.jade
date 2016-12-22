@@ -1,10 +1,11 @@
 .container
 	h1 Image cropper made easy
-
+	button.btn.btn-default((click)="show = !show") Toggle
 	h2 Inline cropper
-	.row
+	.row(*ngIf="show")
 		.col-md-8.col-md-offset-2
-			image-cropper(imageUrl="./wallhaven-450488.png")
+			.cropper
+				image-cropper(imageUrl="./cropped.png", [settings]="{ width: 600, height: 200 }", [cropperOptions]="{viewMode: 1}")
 
 	//- h2 Cropper form input
 

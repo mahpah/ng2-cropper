@@ -1,7 +1,7 @@
 {
-  "name": "ng2-cropper",
-  "version": "0.0.3",
-  "description": "Angular2 component wrapper for CropperJS",
+  "name": "@mahpah/angular-cropper",
+  "version": "0.0.1",
+  "description": "Angular 2+ component wrapper for CropperJS",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",

@@ -7,6 +7,12 @@ This component require
 
 ## Manual
 
+Install via npm
+
+```
+npm install --save @mahpah/angular-cropper
+```
+
 This package export `InlineCropperModule` which export only the `<image-cropper>` element which you can put any where.
 
 ```
